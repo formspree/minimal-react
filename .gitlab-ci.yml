@@ -7,7 +7,11 @@ pages:
 
   script:
   - npm install
-  - npm run prepare
+  - npm run build:prod
+  - mkdir public
+  - cp -r build public
+  - cp index.html public
+
   artifacts:
     paths:
     - public
