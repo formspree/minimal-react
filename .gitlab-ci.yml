@@ -1,4 +1,4 @@
-image: node:4.2.2
+image: node:11.6
 
 pages:
   cache:
