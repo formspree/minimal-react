@@ -24,8 +24,8 @@
     "build:cssmin": "./node_modules/.bin/sass -s compressed scss/main.scss build/main.min.css",
     "build:js": "./node_modules/.bin/browserify js/main.js -o build/bundle.js",
     "build:jsmin": "./node_modules/.bin/browserify js/main.js -g uglifyify -o build/bundle.min.js",
-    "build": "npm run build:css && npm run build:js && echo build: ok",
-    "prepare": "npm run build:cssmin && npm run build:jsmin",
+    "build": "npm run build:css && npm run build:js && echo build ok",
+    "prepare": "npm run build:cssmin && npm run build:jsmin && echo prepare ok",
     "watch": "find js/ scss/ -name '*.js' -o -name '*.scss' | entr npm run --silent build"
   },
   "author": "",
