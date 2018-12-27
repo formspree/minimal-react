@@ -10,6 +10,6 @@ pages:
   - npm run prepare
   artifacts:
     paths:
-    - build
+    - public
   only:
     - master
