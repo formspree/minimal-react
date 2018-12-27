@@ -1,0 +1,45 @@
+{
+  "name": "minimal-react",
+  "version": "1.0.0",
+  "description": "",
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "sourceMaps": true,
+          "sourceMapsAbsolute": true
+        }
+      ]
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react",
+      "@babel/preset-env"
+    ]
+  },
+  "scripts": {
+    "build:css": "./node_modules/.bin/sass scss/main.scss build/main.css",
+    "build:cssmin": "./node_modules/.bin/sass -s compressed scss/main.scss build/main.min.css",
+    "build:js": "./node_modules/.bin/browserify js/main.js -o build/bundle.js",
+    "build:jsmin": "./node_modules/.bin/browserify js/main.js -g uglifyify -o build/bundle.min.js",
+    "build": "npm run build:css && npm run build:js && echo ok",
+    "prepare": "npm run build:cssmin && npm run build:jsmin",
+    "watch": "find js/ scss/ -name '*.js' -o -name '*.scss' | entr npm run --silent build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babelify": "^10.0.0",
+    "browserify": "^16.2.3",
+    "sass": "^1.15.2",
+    "uglifyify": "^5.0.1"
+  }
+}
