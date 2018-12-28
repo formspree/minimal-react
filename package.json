@@ -22,7 +22,7 @@
   "scripts": {
     "build:css": "./node_modules/.bin/sass scss/main.scss build/main.css",
     "build:cssmin": "./node_modules/.bin/sass -s compressed scss/main.scss build/main.css",
-    "build:js": "./node_modules/.bin/browserify js/main.js -o build/main.js",
+    "build:js": "./node_modules/.bin/browserify js/main.js --debug -o build/main.js",
     "build:jsmin": "./node_modules/.bin/browserify js/main.js -g uglifyify -o build/main.js",
     "build": "npm run build:css && npm run build:js && echo ok",
     "build:prod": "npm run build:cssmin && npm run build:jsmin",
@@ -31,7 +31,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react": "^16.7.0"
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
